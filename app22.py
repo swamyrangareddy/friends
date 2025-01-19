@@ -36,11 +36,6 @@ photo_data = {
     ]
 }
 
-# Create a sidebar for tabs
-selected_tab = st.sidebar.selectbox(
-    "Select a tab",
-    ["Kobbari Bondam", "Adduthera"]
-)
 
 # Display the selected tab's photos
 tabs = st.tabs(["Kobbari Bondam", "Adduthera"])
