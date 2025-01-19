@@ -48,7 +48,7 @@ for tab_name, tab in zip(photo_data.keys(), tabs):
         cols = st.columns(1)
         for idx, photo in enumerate(photos):
             with cols[idx % 1]:
-                st.image(photo["image"], width=300)
+                st.image(photo["image"])
                 st.write(photo["title"])
                 st.markdown("---")
 
