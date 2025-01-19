@@ -43,15 +43,20 @@ selected_tab = st.sidebar.selectbox(
 )
 
 # Display the selected tab's photos
-if selected_tab in photo_data:
-    st.title(selected_tab)
-    photos = photo_data[selected_tab]
-    cols = st.columns(2)
-    for idx, photo in enumerate(photos):
-        with cols[idx % 2]:
-            st.image(photo["image"],width=300)
-            st.write(photo["title"])
-            # horizontal line
+tabs = st.tabs(["Kobbari Bondam", "Adduthera"])
+
+# Display photos for each tab
+for tab_name, tab in zip(photo_data.keys(), tabs):
+    with tab:
+        st.title(tab_name)
+        photos = photo_data[tab_name]
+        cols = st.columns(2)
+        for idx, photo in enumerate(photos):
+            with cols[idx % 2]:
+                st.image(photo["image"], width=300)
+                st.write(photo["title"])
+                st.markdown("---")
+
             st.markdown("---")
 else:
     st.write("No photos available for this tab.")
